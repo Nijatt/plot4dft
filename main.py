@@ -13,6 +13,9 @@ Output of DFT programs:
 import sys
 from BAND_plot import *
 from DOS_plot import *
+from read_data import *
+
+
 
 class Menu:
     def __init__(self):
@@ -25,7 +28,8 @@ class Menu:
         self.framework_choises={
             "1": self.vasp,
             "2": self.qespresso,
-            "0": self.quit
+            "0": self.quit,
+            "4": self.test
         }
 
     def display_plot_menu(self):
@@ -89,6 +93,16 @@ class Menu:
     def plot_band(self):
         print("Band Structure plot.....")
         plotband=BAND_plot()
+
+    def test(self):
+        test=read_data()
+        test.set_name()
+        test.get_name()
+        test.read_data()
+        test.display_data()
+
+
+
 
     def quit(self):
         print(""" Thank you for using plot4DFT...
