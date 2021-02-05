@@ -46,7 +46,7 @@ class Menu:
                       1.  VASP
                       2.  Quantum Espresso
                       0.  Quit 
-                      4.  Test store data""")
+                      4.  Manual 2D plot""")
 
     def display_intro(self):
             print("""^

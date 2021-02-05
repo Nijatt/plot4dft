@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ef8abf9-137e-4927-8b9f-3e3bc8660c50" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAND.dat" beforeDir="false" afterPath="$PROJECT_DIR$/BAND.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BAND_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/BAND_plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DOS_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/DOS_plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/read_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/read_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -173,10 +170,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.plot4dft" />
+        <item itemvalue="Python.read_data" />
         <item itemvalue="Python.Menu" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.BAND_plot" />
-        <item itemvalue="Python.read_data" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +195,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

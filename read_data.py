@@ -11,8 +11,12 @@ class read_data:
         self.filename_with_dir = ""
         self.dir = os.path.dirname(os.path.abspath(__file__)).__add__('\\')
         self.file_data = []
-        self.data_name_for_x = "X data"
-        self.data_name_for_y = "Y data"
+        #graph names
+
+        self.graph_info_data=[]
+        self.graph_info_data.append("X data")
+        self.graph_info_data.append("Y data")
+        self.graph_info_data.append("Title: 2D plot")
 
         self.input_choses = {
             "1": self.set_name,
@@ -20,6 +24,8 @@ class read_data:
             "3": self.get_name,
             "4": self.get_file_path,
             "5": self.display_data,
+            "6": self.change_graph_info,
+            "7": self.plot_data,
             "0": self.menu
         }
 
@@ -32,13 +38,17 @@ class read_data:
     # self.print_data()
 
     def display_menu(self):
-        print(""" READ DATA---->
-                      1.  Set file name
-                      2.  Read data file
-                      3.  Display file name
-                      4.  Display file dir 
-                      5.  Show file data 
-                      0.  Close """)
+        print(
+ """ 
+ ************READ DATA**************
+ 1.  What is name of file?"""+ " --> "+self.filename+ """
+ 2.  Read data file.
+ 3.  Display file name.
+ 4.  Display file directory. 
+ 5.  Show data.
+ 6.  Change graph parameters. 
+ 7.  Plot data graph.
+ 0.  Close """)
 
     def run(self):
         '''Display the menu and respond to choices.'''
@@ -68,10 +78,17 @@ class read_data:
         print("file successfully stored.")
 
     def display_data(self):
-        print(self.data_name_for_x)
+        print(self.graph_info_data[0])
         print(self.file_data[0])
-        print(self.data_name_for_y)
+        print(self.graph_info_data[1])
         print(self.file_data[1])
+
+
+    def change_graph_info(self):
+        for i in range(len(self.graph_info_data)):
+            self.graph_info_data[i] = input(self.graph_info_data[i]+" --> ")
+
+
 
     def get_name(self):
         print(self.filename)
@@ -91,6 +108,31 @@ class read_data:
     def set_quit_true(self):
         self.quit=True
 
+
+    def plot_data(self):
+        fig = plt.figure()
+
+        ax1 = fig.add_subplot(111)
+
+        ax1.set_title(self.graph_info_data[2])
+        ax1.set_xlabel(self.graph_info_data[0])
+        ax1.set_ylabel(self.graph_info_data[1])
+
+        #plt.axvline(x=0.000, color='gray', linestyle='--')
+        #plt.text(0.000, ax1.get_ylim()[1], "G")
+
+        #plt.axvline(x=1.353, color='gray', linestyle='--')
+        #plt.text(1.353, ax1.get_ylim()[1], "M")
+
+        #plt.axvline(x=2.134, color='gray', linestyle='--')
+        #plt.text(2.134, ax1.get_ylim()[1], "K")
+
+        #plt.axvline(x=3.695, color='gray', linestyle='--')
+        #plt.text(3.695, ax1.get_ylim()[1], "G")
+
+        ax1.plot(self.file_data[0], self.file_data[1], c='r', label='the data')
+
+        plt.show()
 
     def menu(self):
         self.quit = False
