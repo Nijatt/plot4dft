@@ -7,7 +7,7 @@ class BAND_plot:
         self.plot()
 
     def plot(self):
-        with open('BAND.dat') as f:
+        with open('BAND.data') as f:
             lines = f.readlines()
 
 

@@ -29,8 +29,10 @@ class Menu:
             "1": self.vasp,
             "2": self.qespresso,
             "0": self.quit,
-            "4": self.test
+            "4": self.input_data,
+
         }
+        self.test_data=read_data()
 
     def display_plot_menu(self):
         print("""
@@ -43,7 +45,8 @@ class Menu:
             print(""" Notebook Menu
                       1.  VASP
                       2.  Quantum Espresso
-                      0.  Quit """)
+                      0.  Quit 
+                      4.  Test store data""")
 
     def display_intro(self):
             print("""^
@@ -94,13 +97,10 @@ class Menu:
         print("Band Structure plot.....")
         plotband=BAND_plot()
 
-    def test(self):
-        test=read_data()
-        test.set_name()
-        test.get_name()
-        test.read_data()
-        test.display_data()
-
+    def input_data(self):
+        self.test_data.set_quit_true()
+        self.test_data.run()
+        print("end ")
 
 
 
@@ -111,4 +111,4 @@ class Menu:
                     """)
         sys.exit(0)
 
-Menu().run()
+#Menu().run()

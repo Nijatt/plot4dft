@@ -1,13 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#DOS plot VASP data 
+#DOS plot VASP data
 
 class DOS_plot:
     def __init__(self):
         self.plot()
 
     def plot(self):
-        with open('TDOS.txt') as f:
+        with open("TDOS.txt") as f:
             lines = f.readlines()
 
         x_data = [line.split()[0] for line in lines if len(line.split()) == 2]
