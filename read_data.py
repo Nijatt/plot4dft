@@ -30,7 +30,7 @@ class read_data:
         }
 
     def __del__(self):
-        print("CLOSED")
+        pass
 
     # self.set_name()
     # self.get_name()
@@ -73,14 +73,12 @@ class read_data:
             if len(line.split())==2:
                 try:
                     x_data.append(float(line.split()[0]))
-                    y_data.append(float(line.split()[0]))
+                    y_data.append(float(line.split()[1]))
                 except:
-                    print("Data error")
+                    print("Data Line Error")
 
         #x_data = [line.split()[0] for line in lines if len(line.split()) == 2 and isinstance(float(line.split()[0]),numbers.Number) ]
         #y_data = [line.split()[1] for line in lines if len(line.split()) == 2 and isinstance(float(line.split()[0]),numbers.Number) ]
-
-        print(x_data)
 
         x_data = np.array(x_data)
         x = x_data.astype(np.float)
@@ -90,7 +88,7 @@ class read_data:
 
         self.file_data.append(x)
         self.file_data.append(y)
-        print("file successfully stored.")
+        print("File Successfully Stored.")
 
     def display_data(self):
         print(self.graph_info_data[0])

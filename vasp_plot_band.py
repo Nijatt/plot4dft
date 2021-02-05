@@ -6,7 +6,7 @@ from Menu import *
 import matplotlib.pyplot as plt
 from read_data import *
 
-class vasp_plot(read_data):
+class vasp_plot_band(read_data):
     def __init__(self):
         super().__init__()
         self.set_name()
@@ -41,7 +41,7 @@ class vasp_plot(read_data):
 
         labels = [line.split()[0] for line in lines if len(line.split()) == 2]
         points = [line.split()[1] for line in lines if len(line.split()) == 2]
-
+        print("High Symmetry Points")
         print(labels)
         print(points)
         points= np.array(points)
@@ -50,9 +50,8 @@ class vasp_plot(read_data):
         for i in range(len(x_points)):
             plt.axvline(x=x_points[i], color='gray', linestyle='--')
             plt.text(x_points[i], ax1.get_ylim()[1], labels[i])
-        print(self.file_data[0])
-        ax1.plot(self.file_data[0], self.file_data[1], c='r', label='the data')
 
+        ax1.plot(self.file_data[0], self.file_data[1], c='r', label='the data')
 
     def set_name(self):
         self.filename="BAND.dat"

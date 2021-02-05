@@ -2,14 +2,14 @@ import numpy as np
 import os
 from Menu import *
 import matplotlib.pyplot as plt
-from vasp_plot import *
+from vasp_plot_band import *
 
 
 class automatic_plot:
     def __init__(self,which_frame_work):
         if which_frame_work=="1":
             print("VASP plot")
-            self.vasp_pl=vasp_plot()
+            self.vasp_pl=vasp_plot_band()
             self.vasp_pl.run()
 
 

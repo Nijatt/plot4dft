@@ -37,19 +37,20 @@ class Menu:
         self.test_data=read_data()
 
     def display_plot_menu(self):
-        print("""
-               1. BAND Structure
-               2. Density of States
-               3. Back to Menu
+        print(
+"""1. BAND Structure
+2. Density of States
+3. Back to Menu
               """)
 
     def display_menu(self):
-            print(""" Notebook Menu
-                      1.  VASP
-                      2.  Quantum Espresso
-                      0.  Quit 
-                      4.  Manual 2D plot
-                      5.  Automatic Plot """)
+            print(
+""" Notebook Menu
+1.  VASP
+2.  Quantum Espresso
+0.  Quit 
+4.  Manual 2D plot
+5.  Automatic Plot """)
 
     def display_intro(self):
             print("""^
