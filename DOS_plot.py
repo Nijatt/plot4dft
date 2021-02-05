@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+#DOS plot VASP data 
 
 class DOS_plot:
     def __init__(self):
@@ -50,6 +50,3 @@ class DOS_plot:
         ax1.plot(x, y, c='r', label='the data')
 
         plt.show()
-
-
-
