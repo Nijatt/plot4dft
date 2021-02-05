@@ -1,4 +1,5 @@
 # basic plot program
+#Nijat
 '''
 DFT outputs:
     * BAND structure
