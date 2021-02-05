@@ -2,7 +2,7 @@ import numpy as np
 import os
 from Menu import *
 import matplotlib.pyplot as plt
-
+import numbers
 
 class read_data:
     def __init__(self):
@@ -65,14 +65,29 @@ class read_data:
         with open(self.filename_with_dir) as f:
             lines = f.readlines()
 
-        x_data = [line.split()[0] for line in lines if len(line.split()) == 2]
-        y_data = [line.split()[1] for line in lines if len(line.split()) == 2]
+        print(lines)
+
+        x_data=[]
+        y_data=[]
+        for line in lines:
+            if len(line.split())==2:
+                try:
+                    x_data.append(float(line.split()[0]))
+                    y_data.append(float(line.split()[0]))
+                except:
+                    print("Data error")
+
+        #x_data = [line.split()[0] for line in lines if len(line.split()) == 2 and isinstance(float(line.split()[0]),numbers.Number) ]
+        #y_data = [line.split()[1] for line in lines if len(line.split()) == 2 and isinstance(float(line.split()[0]),numbers.Number) ]
+
+        print(x_data)
 
         x_data = np.array(x_data)
         x = x_data.astype(np.float)
 
         y_data = np.array(y_data)
         y = y_data.astype(np.float)
+
         self.file_data.append(x)
         self.file_data.append(y)
         print("file successfully stored.")
@@ -117,18 +132,6 @@ class read_data:
         ax1.set_title(self.graph_info_data[2])
         ax1.set_xlabel(self.graph_info_data[0])
         ax1.set_ylabel(self.graph_info_data[1])
-
-        #plt.axvline(x=0.000, color='gray', linestyle='--')
-        #plt.text(0.000, ax1.get_ylim()[1], "G")
-
-        #plt.axvline(x=1.353, color='gray', linestyle='--')
-        #plt.text(1.353, ax1.get_ylim()[1], "M")
-
-        #plt.axvline(x=2.134, color='gray', linestyle='--')
-        #plt.text(2.134, ax1.get_ylim()[1], "K")
-
-        #plt.axvline(x=3.695, color='gray', linestyle='--')
-        #plt.text(3.695, ax1.get_ylim()[1], "G")
 
         ax1.plot(self.file_data[0], self.file_data[1], c='r', label='the data')
 

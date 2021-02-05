@@ -14,6 +14,7 @@ import sys
 from BAND_plot import *
 from DOS_plot import *
 from read_data import *
+from automatic_plot import *
 
 
 
@@ -30,6 +31,7 @@ class Menu:
             "2": self.qespresso,
             "0": self.quit,
             "4": self.input_data,
+            "5": self.automatic
 
         }
         self.test_data=read_data()
@@ -46,7 +48,8 @@ class Menu:
                       1.  VASP
                       2.  Quantum Espresso
                       0.  Quit 
-                      4.  Manual 2D plot""")
+                      4.  Manual 2D plot
+                      5.  Automatic Plot """)
 
     def display_intro(self):
             print("""^
@@ -79,6 +82,9 @@ class Menu:
                 action()
             else:
                 print("{0} is not a valid choice".format(choice))
+
+    def automatic(self):
+        auto_plot=automatic_plot("1")
 
 
 
