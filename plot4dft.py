@@ -1,5 +1,5 @@
 # basic plot program
-#Nijat
+#Nijat Shukurov
 '''
 DFT outputs:
     * BAND structure
@@ -32,22 +32,22 @@ class Menu:
         print("""
                1. BAND Structure
                2. Density of States
-               3. Back to Menu 
+               3. Back to Menu
               """)
 
     def display_menu(self):
             print(""" Notebook Menu
-                      1.  VASP  
-                      2.  Quantum Espresso 
+                      1.  VASP
+                      2.  Quantum Espresso
                       0.  Quit """)
 
     def display_intro(self):
-            print("""^ 
+            print("""^
                      |                  *
                      |     * *         *
                      |   *     *      *
                      |  *       *    *
-                     | *          * *  
+                     | *          * *
                      0--------------------->   PLOT4DFT ....""")
 
     def run(self):
