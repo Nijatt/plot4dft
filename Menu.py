@@ -15,8 +15,8 @@ from BAND_plot import *
 from DOS_plot import *
 from read_data import *
 from automatic_plot import *
-
-
+from QE_Phonon_BAND_DOS_plot import *
+from QE_Phonon_BAND_DOS_plot2 import *
 
 class Menu:
     def __init__(self):
@@ -91,6 +91,10 @@ class Menu:
 
     def qespresso(self):
         print("Quantum Espresso ----->")
+        plotty=QE_Phonon_BAND_DOS_plot2()
+        plotty.run()
+
+
 
 
     def plot_dos(self):
